@@ -60,7 +60,8 @@ class WpOgp_SettingPage
 			}
 		}
 
-		$this->_sections[$id] =& new WpOgp_SettingSection($this->_id, $id, $title, $callback);
+		$section = new WpOgp_SettingSection($this->_id, $id, $title, $callback);
+		$this->_sections[$id] =& $section;
 
 		return $this->_sections[$id];
 	}

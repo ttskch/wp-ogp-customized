@@ -41,7 +41,8 @@ class WpOgp_SettingSection
 
 	function &createField($id, $title = null, $type = null, $options = array())
 	{
-		$this->_fields[$id] =& new WpOgp_SettingField($this->_page, $this->_id, $id, $title);
+		$field = new WpOgp_SettingField($this->_page, $this->_id, $id, $title);
+		$this->_fields[$id] =& $field;
 
 		if ($type) {
 			$this->_fields[$id]->createForm($id, $type, $options);
